@@ -1,0 +1,93 @@
+.container,
+main {
+    display: flex;
+    flex-flow: row wrap;
+    font-family: 'Roboto', sans-serif;
+}
+
+aside {
+    width: 20%;
+    height: 100vh;
+}
+
+main {
+    width: 80%;
+    height: 100vh;
+}
+
+.aside_top {
+    height: 40%;
+}
+
+.aside_top>img {
+    width: 80%;
+}
+
+.header {
+    height: 60%;
+}
+
+.aside_top {
+    text-align: center;
+}
+
+.aside_top h1 {
+    font-size: 3vh;
+
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.aside_top span {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 2vh;
+    letter-spacing: 0.8px;
+    text-align: right;
+}
+
+.header .header-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-weight: 100;
+    font-size: 4vh;
+}
+
+.listTechs {
+    padding-left: 10%;
+
+    height: 100%;
+}
+
+.listIten {
+    line-height: 6vh;
+}
+
+.blockpage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.blockpage div {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    /*background-image: url('../assets/github-logo.png');*/
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-size: 65% 90%;
+    background-color: rgb(251, 255, 232);
+
+    color: rgba(31, 0, 0, 0.664);
+    font-weight: 200;
+    font-size: 3vh;
+
+    max-width: 33%;
+    max-height: 33%;
+}
