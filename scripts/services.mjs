@@ -1,3 +1,6 @@
+// alert('in construction...')
+
+
 class Experience {
     constructor(title, office, description) {
         this.title = title
@@ -64,7 +67,7 @@ function getRepository() {
         div.appendChild(selectItems)
     }
 
-    setInterval(newblock, 100)
+    setInterval(newblock, 4000)
 }
 
 getRepository()

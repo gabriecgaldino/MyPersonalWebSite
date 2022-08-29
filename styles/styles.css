@@ -8,6 +8,8 @@ main {
 aside {
     width: 20%;
     height: 100vh;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 0px 1px 49px 22px #3d3d3d96 inset;
 }
 
 main {
@@ -21,6 +23,11 @@ main {
 
 .aside_top>img {
     width: 80%;
+    border-radius: 50%;
+
+    margin-top: 2%;
+    padding: 1%;
+    border: 3px solid rgb(68, 68, 68);
 }
 
 .header {
@@ -34,16 +41,13 @@ main {
 .aside_top h1 {
     font-size: 3vh;
 
-    margin-top: 5%;
-    margin-bottom: 2%;
+    margin-top: 2%;
 }
 
 .aside_top span {
     font-style: italic;
     font-weight: 100;
     font-size: 2vh;
-    letter-spacing: 0.8px;
-    text-align: right;
 }
 
 .header .header-container {
@@ -52,42 +56,98 @@ main {
     height: 100%;
     font-weight: 100;
     font-size: 4vh;
+
+    color: rgb(0, 4, 41);
 }
 
 .listTechs {
     padding-left: 10%;
+    padding-top: 10%;
 
     height: 100%;
 }
 
 .listIten {
     line-height: 6vh;
+    margin: 5%;
+}
+
+.listIten:hover {
+    border-left: 10px solid rgb(51, 51, 51);
+    padding-left: 11%;
+
+    border-radius: 10px;
 }
 
 .blockpage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
+    width: 100%;
 }
+
 
 .blockpage div {
     display: flex;
     flex-direction: column;
+    padding: 10px;
 
     justify-content: center;
     align-items: center;
 
-    /*background-image: url('../assets/github-logo.png');*/
     background-position: center center;
     background-repeat: no-repeat;
 
     background-size: 65% 90%;
-    background-color: rgb(251, 255, 232);
+    background-color: rgb(61, 61, 61);
 
     color: rgba(31, 0, 0, 0.664);
     font-weight: 200;
     font-size: 3vh;
 
-    max-width: 33%;
-    max-height: 33%;
+    width: calc(width / 3);
+    height: calc(heigth / 4);
+}
+
+.blockpage div p,
+.blockpage div span {
+    font-size: 2vh;
+    color: rgb(196, 196, 196)
+}
+
+.blockpage div h1,
+.blockpage div strong {
+    font-size: 3vh;
+    color: aliceblue;
+}
+
+.blockpage div p {
+    display: none;
+}
+
+.blockpage div p:hover {
+    display: block;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav ul {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-evenly;
+
+
+    font-size: 4vh;
+    font-weight: 200;
+    font-style: italic;
+
+    background-color: rgb(223, 223, 223);
+
 }
