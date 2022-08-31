@@ -1,0 +1,77 @@
+.container,
+header,
+header nav,
+.navigation,
+.navigation-icons {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    flex-direction: column;
+}
+
+body {
+    background-color: rgb(216, 222, 228);
+}
+
+header {
+    width: 100%;
+
+    background-color: #1a1a1a;
+
+    justify-content: space-between;
+
+    font-size: 7vh;
+}
+
+header .container {
+    width: 20%;
+}
+
+header nav {
+    width: 60%;
+    justify-content: space-between;
+}
+
+header .container h1 {
+    font-weight: bolder;
+    color: rgba(202, 202, 202, 0.712)
+}
+
+header .container span {
+    margin-left: -55%;
+
+    font-size: 4vh;
+    font-weight: 600;
+    font-style: italic;
+
+    color: rgb(10, 157, 194);
+}
+
+.navigation:not(.navigation:nth-child(2)) {
+    width: 30%;
+    justify-content: space-between;
+
+    color: gray;
+}
+
+.navigation:nth-child(2) {
+    width: 10%;
+    padding-right: 3%;
+    justify-content: space-between;
+
+    color: white;
+}
+
+.navigation-icons svg {
+    width: 3vh;
+    height: 3vh;
+
+    background-color: transparent;
+}
+
+.navigation-icons svg:hover {
+    color: #188090;
+    cursor: pointer;
+}

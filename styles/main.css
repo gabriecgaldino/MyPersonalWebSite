@@ -1,0 +1,30 @@
+main {
+    width: 100%;
+    height: 93vh;
+}
+
+.info {
+    margin: 0 auto;
+    width: 70%;
+    height: 80%;
+
+    margin-top: 10%;
+    transform: translateY(-15%);
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-area:
+
+        "div div div"
+        "div div div"
+        "div div div";
+}
+
+#projects div {
+    text-align: center;
+    border: 1px solid black;
+}

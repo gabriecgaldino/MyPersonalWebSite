@@ -1,41 +1,5 @@
 // alert('in construction...')
-
-
-class Experience {
-    constructor(title, office, description) {
-        this.title = title
-        this.office = office
-        this.description = description
-    }
-
-    newExperience() {
-        let div = document.createElement('div')
-        div.innerHTML = 
-        ` 
-            <h1> ${this.title} </h1>
-            <span> ${this.office} </span>
-            <p> ${this.description} </p>
-        `
-        return div
-    }
-}
-
-var blocks = []
-const div = document.querySelector('.blockpage')
-const request = fetch('../scripts/experience.json')
-        .then(response => {
-            return response.json()
-        })
-        .then(jsondata => {
-            for(let a= 0; a < jsondata.length; a++){
-                let exp = new Experience(jsondata[a].title, jsondata[a].office, jsondata[a].description)
-                blocks.push(exp.newExperience())
-            }
-        })
-
-
-function getRepository() {
-    fetch('https://api.github.com/users/gabriecgaldino/repos')
+fetch('https://api.github.com/users/gabriecgaldino/repos')
     .then(async res => {
         
         if (!res.ok) {
@@ -45,29 +9,60 @@ function getRepository() {
         const data = await res.json()
 
         data.map(item => {
-            let blockDiv = document.createElement('div')
-
-            blockDiv.innerHTML =  `
-            <strong>${item.name.toUpperCase()}</strong>
-            <span> ${Intl.DateTimeFormat('pt-BR')
-                .format(new Date(item.created_at))}
-            </span>
-            `
+            let blockDiv = {
+                type: 'projects',
+                name: item.name.toUpperCase(),
+                created_at: Intl.DateTimeFormat('pt-BR').format(new Date(item.created_at))
+            }
             blocks.push(blockDiv)
         })
     }).catch( e => console.log(e))
+fetch('../scripts/experience.json')
+    .then(response => {
+        return response.json()
+    })
+    .then(jsondata => {
+        jsondata.map(item => {
+            let exp = {
+                type: 'experience',
+                title: item.title,
+                office: item.office,
+                description: item.description
+            }
+            blocks.push(exp)
+        })
+    })
 
-    function newblock() {
-        const selectItems = blocks[Math.ceil(Math.random() * (blocks.length - 0) + 0)]
+var blocks = []
+const projects = document.querySelector('#projects')
 
-        if(div.children.length >= 9){
-            div.children[Math.ceil(Math.random() * (9 - 0) + 0)].append = `${selectItems}`
-        }
-
-        div.appendChild(selectItems)
+function newblock() {
+    const newItem = document.createElement('div')
+    var random = blocks[Math.ceil(Math.random() * ((blocks.length - 1)))]
+    
+    if(random.type == 'experience'){
+        newItem.innerHTML = `
+        <strong> ${random.title} </strong>
+        <p> ${random.office} </p>
+        
+        `
+    } else {
+        newItem.innerHTML = `
+        <strong> ${random.name} </strong >
+        <p> ${random.created_at} </p>
+        `
     }
 
-    setInterval(newblock, 4000)
-}
+    if(projects.children.length < 9){
+        projects.append(newItem)
+    } else {
+        projects.children[Math.ceil(Math.random() * ((8 - 0)))].innerHTML = `${newItem.innerHTML}`
+    }
+    
 
-getRepository()
+
+    
+
+}
+setInterval(newblock, 500)
+
